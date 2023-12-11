@@ -2,14 +2,12 @@ import Ajv from 'ajv';
 const ajv = new Ajv();
 const apiBaseURL = Cypress.env('CYPRESS_BASE_URL');
 let requestInfo = JSON.parse(
-    JSON.stringify({ url: '/store/inventory', method: 'GET' })
+    JSON.stringify({ url: '/employee', method: 'POST' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
-describe('Returns pet inventories by status', () => {
-    // Please be informed that the API in this file has been deprecated and will no longer be supported.
-
-    it.skip('Returns a map of status codes to quantities', () => {
-        cy.fixture('200__getInventory').then((fixtureResponse) => {
+describe('Create employee', () => {
+    it('This can only be done by the logged in employee.', () => {
+        cy.fixture('200__createEmployee').then((fixtureResponse) => {
             requestInfo.headers = fixtureResponse.headers
                 ? fixtureResponse.headers
                 : '';
