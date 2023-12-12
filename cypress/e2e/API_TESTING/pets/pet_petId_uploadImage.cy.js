@@ -5,7 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/pet/{petId}/uploadImage', method: 'POST' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
-describe('uploads an image Yes ', () => {
+describe('uploads an image', () => {
     it('/pet/{petId}/uploadImage', () => {
         cy.fixture('200_application_json__pet_petId_uploadImage').then(
             (fixtureResponse) => {

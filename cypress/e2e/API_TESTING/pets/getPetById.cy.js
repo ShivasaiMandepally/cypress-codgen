@@ -5,8 +5,8 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/pet/{petId}', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
-describe('Find pet by ID UPDATE56asdasdas', () => {
-    it('Returns a single petasdasdas', () => {
+describe('Find pet by ID', () => {
+    it('Returns a single pet', () => {
         cy.fixture('200_application_json__getPetById').then(
             (fixtureResponse) => {
                 requestInfo.body = fixtureResponse.payload
@@ -46,7 +46,7 @@ describe('Find pet by ID UPDATE56asdasdas', () => {
             }
         );
     });
-    it('Returns a single petasdasdas', () => {
+    it('Returns a single pet', () => {
         cy.fixture('404___getPetById').then((fixtureResponse) => {
             requestInfo.body = fixtureResponse.payload
                 ? fixtureResponse.payload
