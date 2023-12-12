@@ -25,6 +25,10 @@
         {
             "description": "dev",
             "url": "http://petstore.swagger.io/v2"
+        },
+        {
+            "description": "qa",
+            "url": "http://swagger.io"
         }
     ],
     "tags": [
@@ -53,12 +57,12 @@
         "/pet/{petId}/uploadImage": {
             "post": {
                 "tags": ["pets"],
-                "summary": "uploads an image Yes ",
+                "summary": "uploads an image",
                 "parameters": [
                     {
                         "name": "petId",
                         "in": "path",
-                        "description": "ID of pet to update YES",
+                        "description": "ID of pet to update",
                         "required": true,
                         "schema": {
                             "type": "integer",
@@ -99,7 +103,7 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application/json": {
+                        "multipart/form-data": {
                             "schema": {
                                 "type": "string",
                                 "format": "binary"
@@ -134,7 +138,7 @@
         "/pet": {
             "put": {
                 "tags": ["pets"],
-                "summary": "Update an existing petYES ",
+                "summary": "Update an existing pet",
                 "operationId": "updatePet",
                 "requestBody": {
                     "description": "Pet object that needs to be added to the store",
@@ -439,8 +443,8 @@
         "/pet/{petId}": {
             "get": {
                 "tags": ["pets"],
-                "summary": "Find pet by ID UPDATE56asdasdas",
-                "description": "Returns a single petasdasdas",
+                "summary": "Find pet by ID",
+                "description": "Returns a single pet",
                 "operationId": "getPetById",
                 "parameters": [
                     {
