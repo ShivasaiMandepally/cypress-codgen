@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npm run test"
+        "test": "npx cypress run"
     },
     "keywords": [],
     "author": "",
