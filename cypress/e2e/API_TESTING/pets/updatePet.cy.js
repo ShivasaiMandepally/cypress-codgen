@@ -4,7 +4,7 @@ const apiBaseURL = Cypress.env('CYPRESS_BASE_URL');
 let requestInfo = JSON.parse(JSON.stringify({ url: '/pet', method: 'PUT' }));
 requestInfo.url = apiBaseURL + requestInfo.url;
 
-describe('Update an existing petYES ', () => {
+describe('Update an existing pet', () => {
     it('/pet', () => {
         cy.fixture('200__updatePet').then((fixtureResponse) => {
             requestInfo.headers = fixtureResponse.headers
