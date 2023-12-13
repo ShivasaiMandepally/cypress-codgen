@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/user/createWithArray', method: 'POST' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Creates list of users with given input array', () => {
     it('/user/createWithArray', () => {
         cy.fixture('200__createUsersWithArrayInput').then((fixtureResponse) => {

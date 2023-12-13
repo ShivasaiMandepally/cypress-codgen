@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/store/order', method: 'POST' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Place an order for a pet', () => {
     it('/store/order', () => {
         cy.fixture('200__placeOrder').then((fixtureResponse) => {

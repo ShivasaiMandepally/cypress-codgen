@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/user/logout', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Logs out current logged in user session', () => {
     it('/user/logout', () => {
         cy.fixture('200__logoutUser').then((fixtureResponse) => {

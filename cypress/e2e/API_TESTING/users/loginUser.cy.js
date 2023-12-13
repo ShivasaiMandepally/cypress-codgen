@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/user/login', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Logs user into the system', () => {
     it('/user/login', () => {
         cy.fixture('200_application_json__loginUser').then(

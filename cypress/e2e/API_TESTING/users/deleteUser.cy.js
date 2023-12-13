@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/user/{username}', method: 'DELETE' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Delete user', () => {
     it('This can only be done by the logged in user.', () => {
         cy.fixture('400___deleteUser').then((fixtureResponse) => {

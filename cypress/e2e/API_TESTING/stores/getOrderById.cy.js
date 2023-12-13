@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/store/order/{orderId}', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Find purchase order by ID', () => {
     it('For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions', () => {
         cy.fixture('200_application_json__getOrderById').then(

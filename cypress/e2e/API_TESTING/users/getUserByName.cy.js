@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/user/{username}', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Get user by user name', () => {
     it('/user/{username}', () => {
         cy.fixture('200_application_json__getUserByName').then(

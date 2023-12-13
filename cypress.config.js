@@ -1,5 +1,5 @@
-const { defineConfig } = require('cypress');
-module.exports = defineConfig({
+import { defineConfig } from 'cypress';
+export default defineConfig({
     e2e: {
         setupNodeEvents(on, config) {
             on('task', {

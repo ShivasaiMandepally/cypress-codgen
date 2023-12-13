@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/store/order/{orderId}', method: 'DELETE' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Delete purchase order by ID', () => {
     it('For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors', () => {
         cy.fixture('200_application_json__deleteOrder').then(

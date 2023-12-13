@@ -3,6 +3,7 @@ const ajv = new Ajv();
 const apiBaseURL = Cypress.env('CYPRESS_BASE_URL');
 let requestInfo = JSON.parse(JSON.stringify({ url: '/user', method: 'POST' }));
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Create user', () => {
     it('This can only be done by the logged in user.', () => {
         cy.fixture('200__createUser').then((fixtureResponse) => {
