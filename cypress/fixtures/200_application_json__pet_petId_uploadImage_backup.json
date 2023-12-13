@@ -32,5 +32,8 @@
     },
     "cookie": {
         "undefined": ""
+    },
+    "header": {
+        "undefined": ""
     }
 }

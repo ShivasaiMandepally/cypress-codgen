@@ -53,12 +53,12 @@
         "/pet/{petId}/uploadImage": {
             "post": {
                 "tags": ["pets"],
-                "summary": "uploads an image Yes ",
+                "summary": "uploads an image",
                 "parameters": [
                     {
                         "name": "petId",
                         "in": "path",
-                        "description": "ID of pet to update YES",
+                        "description": "ID of pet to update",
                         "required": true,
                         "schema": {
                             "type": "integer",
@@ -85,16 +85,6 @@
                             "type": "string"
                         },
                         "example": "cookieValue"
-                    },
-                    {
-                        "name": "header",
-                        "in": "header",
-                        "description": "ID of pet to update",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "cG9zdG1hbjpwYXNzd29yZA=="
                     }
                 ],
                 "requestBody": {
@@ -134,7 +124,7 @@
         "/pet": {
             "put": {
                 "tags": ["pets"],
-                "summary": "Update an existing petYES ",
+                "summary": "Update an existing pet",
                 "operationId": "updatePet",
                 "requestBody": {
                     "description": "Pet object that needs to be added to the store",
@@ -593,6 +583,65 @@
                         "petstore_auth": ["write:pets", "read:pets"]
                     }
                 ]
+            },
+            "put": {
+                "tags": ["pets"],
+                "summary": "Updates a pet in the store with form data",
+                "operationId": "update",
+                "parameters": [
+                    {
+                        "name": "petId",
+                        "in": "path",
+                        "description": "ID of pet that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Updated name of the pet"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "Updated status of the pet"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "name": "Bruno",
+                                "status": "sold"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Invalid input",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "code": 201,
+                                    "type": "unknown",
+                                    "message": "updated succesfully"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "petstore_auth": ["write:pets", "read:pets"]
+                    }
+                ]
             }
         },
         "/store/order": {
@@ -755,7 +804,8 @@
                     {
                         "api_key": []
                     }
-                ]
+                ],
+                "deprecated": true
             }
         },
         "/user/createWithArray": {
@@ -1078,6 +1128,55 @@
                 "summary": "Create user",
                 "description": "This can only be done by the logged in user.",
                 "operationId": "createUser",
+                "requestBody": {
+                    "description": "Created user object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "200": {
+                                    "summary": "positive",
+                                    "value": {
+                                        "id": 1,
+                                        "username": "shivasai123",
+                                        "firstName": "shivasai",
+                                        "lastName": "mandepally",
+                                        "email": "shivasai@gmail.com",
+                                        "password": "shiva1213",
+                                        "phone": 9542066149,
+                                        "userStatus": 0
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "applciation/json": {
+                                "example": {
+                                    "code": 200,
+                                    "type": "unknown",
+                                    "message": 1
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-codegen-request-body-name": "body"
+            }
+        },
+        "/employee": {
+            "post": {
+                "tags": ["employee"],
+                "summary": "Create employee",
+                "description": "This can only be done by the logged in employee.",
+                "operationId": "createEmployee",
                 "requestBody": {
                     "description": "Created user object",
                     "content": {

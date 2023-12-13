@@ -7,7 +7,9 @@ let requestInfo = JSON.parse(
 requestInfo.url = apiBaseURL + requestInfo.url;
 
 describe('Returns pet inventories by status', () => {
-    it('Returns a map of status codes to quantities', () => {
+    // Please be informed that the API in this file has been deprecated and will no longer be supported.
+
+    it.skip('Returns a map of status codes to quantities', () => {
         cy.fixture('200__getInventory').then((fixtureResponse) => {
             requestInfo.headers = fixtureResponse.headers
                 ? fixtureResponse.headers
