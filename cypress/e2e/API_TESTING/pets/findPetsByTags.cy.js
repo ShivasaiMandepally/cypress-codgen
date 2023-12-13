@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/pet/findByTags', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Finds Pets by tags', () => {
     // Please be informed that the API in this file has been deprecated and will no longer be supported.
     it.skip('Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.', () => {

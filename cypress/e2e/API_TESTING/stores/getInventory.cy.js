@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/store/inventory', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Returns pet inventories by status', () => {
     it('Returns a map of status codes to quantities', () => {
         cy.fixture('200__getInventory').then((fixtureResponse) => {

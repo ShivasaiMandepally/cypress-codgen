@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/pet/{petId}', method: 'DELETE' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Deletes a pet', () => {
     it('/pet/{petId}', () => {
         cy.fixture('200_application_json__deletePet').then(

@@ -5,6 +5,7 @@ let requestInfo = JSON.parse(
     JSON.stringify({ url: '/pet/findByStatus', method: 'GET' })
 );
 requestInfo.url = apiBaseURL + requestInfo.url;
+
 describe('Finds Pets by status', () => {
     it('Multiple status values can be provided with comma separated strings', () => {
         cy.fixture('200_application_json__findPetsByStatus').then(
