@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-12-26T14:18:54.685Z",
+    "end": "2023-12-26T14:18:55.460Z",
+    "duration": 775,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "24019d01-80d3-4eaf-960d-6a4c00aeda42",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\loginUser.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\loginUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b0631cab-6401-435d-b4a7-496dbc0e6b2d",
+          "title": "Logs user into the system",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/user/login",
+              "fullTitle": "Logs user into the system /user/login",
+              "timedOut": null,
+              "duration": 571,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__loginUser').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "AssertionError: expected false to be true",
+                "estack": "AssertionError: expected false to be true\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/loginUser.cy.js:36:46)",
+                "diff": null
+              },
+              "uuid": "9acab42b-b04e-40dd-8aac-5a16e765f901",
+              "parentUUID": "b0631cab-6401-435d-b4a7-496dbc0e6b2d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9acab42b-b04e-40dd-8aac-5a16e765f901"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 571,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

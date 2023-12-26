@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-12-26T14:17:55.034Z",
+    "end": "2023-12-26T14:17:56.012Z",
+    "duration": 978,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f79fe46e-5efe-4834-8e40-293d9c41749c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\getPetById.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\getPetById.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5c9cdad8-4c2c-4d37-8d5e-a94b99700dfe",
+          "title": "Find pet by ID",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Returns a single pet",
+              "fullTitle": "Find pet by ID Returns a single pet",
+              "timedOut": null,
+              "duration": 417,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__getPetById').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "Error: strict mode: unknown keyword: \"xml\"",
+                "estack": "Error: strict mode: unknown keyword: \"xml\"\n    at checkStrictMode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:174:0)\n    at checkUnknownRules (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:32:0)\n    at checkKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:120:0)\n    at validateFunctionCode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:19:0)\n    at Ajv.compileSchema (webpack://cypress-test-4/./node_modules/ajv/dist/compile/index.js:80:0)\n    at Ajv._compileSchemaEnv (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:472:0)\n    at Ajv.compile (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:159:0)\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/pets/getPetById.cy.js:40:45)",
+                "diff": null
+              },
+              "uuid": "21485481-4099-4af4-8bd6-426ccb1debff",
+              "parentUUID": "5c9cdad8-4c2c-4d37-8d5e-a94b99700dfe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Returns a single pet",
+              "fullTitle": "Find pet by ID Returns a single pet",
+              "timedOut": null,
+              "duration": 325,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('404___getPetById').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 404",
+                "estack": "AssertionError: expected 200 to equal 404\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/pets/getPetById.cy.js:72:43)",
+                "diff": "- 200\n+ 404\n"
+              },
+              "uuid": "b0f94ea1-2989-4f49-8cdd-9f6699c03625",
+              "parentUUID": "5c9cdad8-4c2c-4d37-8d5e-a94b99700dfe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "21485481-4099-4af4-8bd6-426ccb1debff",
+            "b0f94ea1-2989-4f49-8cdd-9f6699c03625"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 742,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

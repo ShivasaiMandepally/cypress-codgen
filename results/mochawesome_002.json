@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-12-26T14:17:46.905Z",
+    "end": "2023-12-26T14:17:47.853Z",
+    "duration": 948,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d16ad9ad-dabe-4fde-856e-cc6945d4bf5c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\findPetsByStatus.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\findPetsByStatus.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee9fb833-b4c3-4436-985f-d2db50009f76",
+          "title": "Finds Pets by status",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Multiple status values can be provided with comma separated strings",
+              "fullTitle": "Finds Pets by status Multiple status values can be provided with comma separated strings",
+              "timedOut": null,
+              "duration": 869,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__findPetsByStatus').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "Error: strict mode: unknown keyword: \"xml\"",
+                "estack": "Error: strict mode: unknown keyword: \"xml\"\n    at checkStrictMode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:174:0)\n    at checkUnknownRules (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:32:0)\n    at alwaysValidSchema (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:19:0)\n    at Object.code (webpack://cypress-test-4/./node_modules/ajv/dist/vocabularies/applicator/items.js:17:0)\n    at keywordCode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:464:0)\n    at eval (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:222:0)\n    at CodeGen.code (webpack://cypress-test-4/./node_modules/ajv/dist/compile/codegen/index.js:439:0)\n    at CodeGen.block (webpack://cypress-test-4/./node_modules/ajv/dist/compile/codegen/index.js:568:0)\n    at iterateKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:219:0)\n    at groupKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:200:0)",
+                "diff": null
+              },
+              "uuid": "43a0c413-6f6d-4133-9f8a-9e33b1ba512a",
+              "parentUUID": "ee9fb833-b4c3-4436-985f-d2db50009f76",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "43a0c413-6f6d-4133-9f8a-9e33b1ba512a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 869,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
