@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2023-12-26T14:18:21.391Z",
-    "end": "2023-12-26T14:18:21.940Z",
-    "duration": 549,
+    "start": "2023-12-26T15:09:45.358Z",
+    "end": "2023-12-26T15:09:45.959Z",
+    "duration": 601,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,41 +18,41 @@
   },
   "results": [
     {
-      "uuid": "b4b92f56-2f53-4e4f-b7b3-0f573687f464",
+      "uuid": "a6f8b496-69c6-4929-8d05-b1438f443e72",
       "title": "",
-      "fullFile": "cypress\\e2e\\API_TESTING\\stores\\placeOrder.cy.js",
-      "file": "cypress\\e2e\\API_TESTING\\stores\\placeOrder.cy.js",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\createUsersWithListInput.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\createUsersWithListInput.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "b0de92e5-d9d2-455a-a533-c75ab5938006",
-          "title": "Place an order for a pet",
+          "uuid": "6800a2e0-face-46fa-b5f3-7d6b033118fb",
+          "title": "Creates list of users with given input array",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "/store/order",
-              "fullTitle": "Place an order for a pet /store/order",
+              "title": "/user/createWithList",
+              "fullTitle": "Creates list of users with given input array /user/createWithList",
               "timedOut": null,
-              "duration": 465,
+              "duration": 408,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.fixture('200_application_json_application_json_placeOrder').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "code": "cy.fixture('200_applciation_json_application_json_createUsersWithListInput').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
               "err": {
-                "message": "Error: strict mode: unknown keyword: \"xml\"",
-                "estack": "Error: strict mode: unknown keyword: \"xml\"\n    at checkStrictMode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:174:0)\n    at checkUnknownRules (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:32:0)\n    at checkKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:120:0)\n    at validateFunctionCode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:19:0)\n    at Ajv.compileSchema (webpack://cypress-test-4/./node_modules/ajv/dist/compile/index.js:80:0)\n    at Ajv._compileSchemaEnv (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:472:0)\n    at Ajv.compile (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:159:0)\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/stores/placeOrder.cy.js:27:45)",
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/createWithList\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user/createWithList\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 154\n}\nBody: [{\"id\":1,\"usrename\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":89277499209}]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:45 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/createWithList\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user/createWithList\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 154\n}\nBody: [{\"id\":1,\"usrename\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":89277499209}]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:45 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/createUsersWithListInput.cy.js:20:15)",
                 "diff": null
               },
-              "uuid": "1a2b55e1-de90-4c3d-8061-bec85b9329d1",
-              "parentUUID": "b0de92e5-d9d2-455a-a533-c75ab5938006",
+              "uuid": "07e3325d-cd93-4b89-b6f3-490bcf2e439d",
+              "parentUUID": "6800a2e0-face-46fa-b5f3-7d6b033118fb",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "1a2b55e1-de90-4c3d-8061-bec85b9329d1"
+            "07e3325d-cd93-4b89-b6f3-490bcf2e439d"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 465,
+          "duration": 408,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

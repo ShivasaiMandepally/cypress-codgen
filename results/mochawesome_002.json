@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2023-12-26T14:17:46.905Z",
-    "end": "2023-12-26T14:17:47.853Z",
-    "duration": 948,
+    "start": "2023-12-26T15:09:11.865Z",
+    "end": "2023-12-26T15:09:11.985Z",
+    "duration": 120,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,41 +18,41 @@
   },
   "results": [
     {
-      "uuid": "d16ad9ad-dabe-4fde-856e-cc6945d4bf5c",
+      "uuid": "a58cc26e-e408-4a7c-837b-41a5365b8300",
       "title": "",
-      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\findPetsByStatus.cy.js",
-      "file": "cypress\\e2e\\API_TESTING\\pets\\findPetsByStatus.cy.js",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\pet_uploadImage_id.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\pet_uploadImage_id.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "ee9fb833-b4c3-4436-985f-d2db50009f76",
-          "title": "Finds Pets by status",
+          "uuid": "79dc2fc5-9140-4c1e-8521-a55d59fe3c24",
+          "title": "uploads an image",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Multiple status values can be provided with comma separated strings",
-              "fullTitle": "Finds Pets by status Multiple status values can be provided with comma separated strings",
+              "title": "/pet/uploadImage/{id}",
+              "fullTitle": "uploads an image /pet/uploadImage/{id}",
               "timedOut": null,
-              "duration": 869,
+              "duration": 72,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.fixture('200_application_json__findPetsByStatus').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "code": "cy.fixture('200_application_json_multipart_form-data_pet_uploadImage_id').then(fixtureResponse => {\n  cy.fixture('**filePath**').then(fileContent => {\n    const blob = new Blob([fileContent], {\n      type: requestInfo.headers['Content-Type']\n    });\n    const formData = new FormData();\n    formData.append('file', blob);\n    requestInfo.body = formData;\n    requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n    let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n    for (const key in pathParams) {\n      if (pathParams.hasOwnProperty(key)) {\n        const placeholder = '{' + key + '}';\n        requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n      }\n    }\n    requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n    cy.request(requestInfo).then(response => {\n      expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n      if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n        const validate = ajv.compile(fixtureResponse.responseSchema);\n        const isValid = validate(response.body);\n        expect(isValid).to.be.true;\n      }\n    });\n  });\n});",
               "err": {
-                "message": "Error: strict mode: unknown keyword: \"xml\"",
-                "estack": "Error: strict mode: unknown keyword: \"xml\"\n    at checkStrictMode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:174:0)\n    at checkUnknownRules (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:32:0)\n    at alwaysValidSchema (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:19:0)\n    at Object.code (webpack://cypress-test-4/./node_modules/ajv/dist/vocabularies/applicator/items.js:17:0)\n    at keywordCode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:464:0)\n    at eval (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:222:0)\n    at CodeGen.code (webpack://cypress-test-4/./node_modules/ajv/dist/compile/codegen/index.js:439:0)\n    at CodeGen.block (webpack://cypress-test-4/./node_modules/ajv/dist/compile/codegen/index.js:568:0)\n    at iterateKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:219:0)\n    at groupKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:200:0)",
+                "message": "Error: A fixture file could not be found at any of the following paths:\n\n    > cypress\\fixtures\\**filePath**\n    > cypress\\fixtures\\**filePath**.[ext]\n\nCypress looked for these file extensions at the provided path:\n\n    > .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip\n\nProvide a path to an existing fixture file.",
+                "estack": "Error: A fixture file could not be found at any of the following paths:\n\n    > cypress\\fixtures\\**filePath**\n    > cypress\\fixtures\\**filePath**.[ext]\n\nCypress looked for these file extensions at the provided path:\n\n    > .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip\n\nProvide a path to an existing fixture file.\n    at Object.<anonymous> (<embedded>:4436:121481)\n    at Object.tryCatcher (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\util.js:16:23)\n    at Promise._settlePromiseFromHandler (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:512:31)\n    at Promise._settlePromise (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:569:18)\n    at Promise._settlePromise0 (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:614:10)\n    at Promise._settlePromises (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:694:18)\n    at Promise._fulfill (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:638:18)\n    at <unknown> (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\nodeback.js:42:21)\n    at s (<embedded>:1832:64795)\n    at E.<anonymous> (<embedded>:4436:111271)\n    at E.emit (node:events:513:28)\n    at E._finish (<embedded>:4436:112138)\n    at d (<embedded>:4436:111534)\n    at E._processReaddir2 (<embedded>:4436:114424)\n    at <unknown> (<embedded>:4436:114104)\n    at s (<embedded>:2904:19687)\n    at s (<embedded>:1832:64795)\n    at E._readdirEntries (<embedded>:4436:116033)\n    at <unknown> (<embedded>:4436:115806)\n    at <unknown> (<embedded>:4533:19659)\n    at FSReqCallback.oncomplete (node:fs:198:23)",
                 "diff": null
               },
-              "uuid": "43a0c413-6f6d-4133-9f8a-9e33b1ba512a",
-              "parentUUID": "ee9fb833-b4c3-4436-985f-d2db50009f76",
+              "uuid": "03536189-c628-4d96-a21e-df11cc236ef2",
+              "parentUUID": "79dc2fc5-9140-4c1e-8521-a55d59fe3c24",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "43a0c413-6f6d-4133-9f8a-9e33b1ba512a"
+            "03536189-c628-4d96-a21e-df11cc236ef2"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 869,
+          "duration": 72,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
