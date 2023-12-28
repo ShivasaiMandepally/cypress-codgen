@@ -1,9 +1,13 @@
 # codegen
 Codegen is a tool that converts Swagger files adhering to OpenAPI 3.X standards into Cypress tests.
 It offers integration with project management tools such as Jira and source code repository platforms like GitHub.
-The process to integrate with jira is:
 \
->>>>[**1. Create an Automation Rule for jira**](documentation/1.md)
+\
+**Wanna try?**
+\
+**follow these 4 steps...**
+
+>[**1. Create an Automation Rule for jira**](documentation/1.md)
 \
 [**2. Integrate Jira with the GitHub repository.**](documentation/1.md)
 \
