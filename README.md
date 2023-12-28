@@ -17,7 +17,7 @@ The process to integrate with jira is:
 
 
 - Add a trigger for issue transitioned.
-![issue Transitioned](images/issue Transitioned.png)
+![issue Transitioned](images/issue-transitioned.png)
 
 
 - Choose transition process from the 'TODO' status to 'IN PROGRESS'.
