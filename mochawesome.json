@@ -1,0 +1,1146 @@
+{
+  "stats": {
+    "suites": 17,
+    "tests": 20,
+    "passes": 4,
+    "pending": 2,
+    "failures": 14,
+    "testsRegistered": 20,
+    "passPercent": 20,
+    "pendingPercent": 10,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-12-26T15:09:04.281Z",
+    "end": "2023-12-26T15:10:06.513Z",
+    "duration": 62232
+  },
+  "results": [
+    {
+      "uuid": "078cca58-9591-49ef-91e6-b4ac1b3309fe",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\getPetById.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\getPetById.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8c04e2b7-2da3-4abc-9749-9c78c79fdc11",
+          "title": "Find pet by ID",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Returns a single pet",
+              "fullTitle": "Find pet by ID Returns a single pet",
+              "timedOut": null,
+              "duration": 462,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__getPetById').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "Error: strict mode: unknown keyword: \"xml\"",
+                "estack": "Error: strict mode: unknown keyword: \"xml\"\n    at checkStrictMode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:174:0)\n    at checkUnknownRules (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:32:0)\n    at checkKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:120:0)\n    at validateFunctionCode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:19:0)\n    at Ajv.compileSchema (webpack://cypress-test-4/./node_modules/ajv/dist/compile/index.js:80:0)\n    at Ajv._compileSchemaEnv (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:472:0)\n    at Ajv.compile (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:159:0)\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/pets/getPetById.cy.js:40:45)",
+                "diff": null
+              },
+              "uuid": "7fdc26b4-8060-4d8e-84ff-32d30d40f013",
+              "parentUUID": "8c04e2b7-2da3-4abc-9749-9c78c79fdc11",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Returns a single pet",
+              "fullTitle": "Find pet by ID Returns a single pet",
+              "timedOut": null,
+              "duration": 342,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('404___getPetById').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 404",
+                "estack": "AssertionError: expected 200 to equal 404\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/pets/getPetById.cy.js:72:43)",
+                "diff": "- 200\n+ 404\n"
+              },
+              "uuid": "68b6f4ce-496a-48f9-a6c9-4428c837ec5e",
+              "parentUUID": "8c04e2b7-2da3-4abc-9749-9c78c79fdc11",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7fdc26b4-8060-4d8e-84ff-32d30d40f013",
+            "68b6f4ce-496a-48f9-a6c9-4428c837ec5e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 804,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a58cc26e-e408-4a7c-837b-41a5365b8300",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\pet_uploadImage_id.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\pet_uploadImage_id.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "79dc2fc5-9140-4c1e-8521-a55d59fe3c24",
+          "title": "uploads an image",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/pet/uploadImage/{id}",
+              "fullTitle": "uploads an image /pet/uploadImage/{id}",
+              "timedOut": null,
+              "duration": 72,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json_multipart_form-data_pet_uploadImage_id').then(fixtureResponse => {\n  cy.fixture('**filePath**').then(fileContent => {\n    const blob = new Blob([fileContent], {\n      type: requestInfo.headers['Content-Type']\n    });\n    const formData = new FormData();\n    formData.append('file', blob);\n    requestInfo.body = formData;\n    requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n    let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n    for (const key in pathParams) {\n      if (pathParams.hasOwnProperty(key)) {\n        const placeholder = '{' + key + '}';\n        requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n      }\n    }\n    requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n    cy.request(requestInfo).then(response => {\n      expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n      if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n        const validate = ajv.compile(fixtureResponse.responseSchema);\n        const isValid = validate(response.body);\n        expect(isValid).to.be.true;\n      }\n    });\n  });\n});",
+              "err": {
+                "message": "Error: A fixture file could not be found at any of the following paths:\n\n    > cypress\\fixtures\\**filePath**\n    > cypress\\fixtures\\**filePath**.[ext]\n\nCypress looked for these file extensions at the provided path:\n\n    > .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip\n\nProvide a path to an existing fixture file.",
+                "estack": "Error: A fixture file could not be found at any of the following paths:\n\n    > cypress\\fixtures\\**filePath**\n    > cypress\\fixtures\\**filePath**.[ext]\n\nCypress looked for these file extensions at the provided path:\n\n    > .json, .js, .coffee, .html, .txt, .csv, .png, .jpg, .jpeg, .gif, .tif, .tiff, .zip\n\nProvide a path to an existing fixture file.\n    at Object.<anonymous> (<embedded>:4436:121481)\n    at Object.tryCatcher (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\util.js:16:23)\n    at Promise._settlePromiseFromHandler (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:512:31)\n    at Promise._settlePromise (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:569:18)\n    at Promise._settlePromise0 (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:614:10)\n    at Promise._settlePromises (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:694:18)\n    at Promise._fulfill (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\promise.js:638:18)\n    at <unknown> (C:\\Users\\al5173\\AppData\\Local\\Cypress\\Cache\\13.6.1\\Cypress\\resources\\app\\node_modules\\bluebird\\js\\release\\nodeback.js:42:21)\n    at s (<embedded>:1832:64795)\n    at E.<anonymous> (<embedded>:4436:111271)\n    at E.emit (node:events:513:28)\n    at E._finish (<embedded>:4436:112138)\n    at d (<embedded>:4436:111534)\n    at E._processReaddir2 (<embedded>:4436:114424)\n    at <unknown> (<embedded>:4436:114104)\n    at s (<embedded>:2904:19687)\n    at s (<embedded>:1832:64795)\n    at E._readdirEntries (<embedded>:4436:116033)\n    at <unknown> (<embedded>:4436:115806)\n    at <unknown> (<embedded>:4533:19659)\n    at FSReqCallback.oncomplete (node:fs:198:23)",
+                "diff": null
+              },
+              "uuid": "03536189-c628-4d96-a21e-df11cc236ef2",
+              "parentUUID": "79dc2fc5-9140-4c1e-8521-a55d59fe3c24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "03536189-c628-4d96-a21e-df11cc236ef2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 72,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9f873d73-c920-49b5-af81-62932d1c67c3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\updatePet.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\updatePet.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "df81de2c-3a90-4768-a79e-9b3d1beed7e0",
+          "title": "Update an existing pet",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/pet",
+              "fullTitle": "Update an existing pet /pet",
+              "timedOut": null,
+              "duration": 379,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json_application_json_updatePet').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {},
+              "uuid": "ae2a844d-1373-4b58-b8e7-f75cbae751ca",
+              "parentUUID": "df81de2c-3a90-4768-a79e-9b3d1beed7e0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ae2a844d-1373-4b58-b8e7-f75cbae751ca"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 379,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7f191824-dd67-447c-9567-eba307c3c8be",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\updatePetWithForm.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\updatePetWithForm.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b5e6be6e-8d93-4ab4-80bb-caad91c87511",
+          "title": "Updates a pet in the store with form data",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/pet/{petId}",
+              "fullTitle": "Updates a pet in the store with form data /pet/{petId}",
+              "timedOut": null,
+              "duration": 391,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('201_application_json_application_json_updatePetWithForm').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/pet/1\n\nThe response we received from your web server was:\n\n  > 415: Unsupported Media Type\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/pet/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"application/json\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 415 - Unsupported Media Type\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:18 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 415,\n  \"type\": \"unknown\"\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/pet/1\n\nThe response we received from your web server was:\n\n  > 415: Unsupported Media Type\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/pet/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"application/json\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 415 - Unsupported Media Type\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:18 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 415,\n  \"type\": \"unknown\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/pets/updatePetWithForm.cy.js:33:15)",
+                "diff": null
+              },
+              "uuid": "6356ce6b-1a57-4a03-b497-cbb1abaa0907",
+              "parentUUID": "b5e6be6e-8d93-4ab4-80bb-caad91c87511",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6356ce6b-1a57-4a03-b497-cbb1abaa0907"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 391,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ae246bf1-6896-4ccf-a7d6-bc9bef02a2b9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\stores\\deleteOrder.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\stores\\deleteOrder.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "73566cfd-6755-4a48-bfbd-bafd426e462b",
+          "title": "Delete purchase order by ID",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors",
+              "fullTitle": "Delete purchase order by ID For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors",
+              "timedOut": null,
+              "duration": 292,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__deleteOrder').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {},
+              "uuid": "b228e397-fc25-433b-ae3f-721fda109b75",
+              "parentUUID": "73566cfd-6755-4a48-bfbd-bafd426e462b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b228e397-fc25-433b-ae3f-721fda109b75"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 292,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c613b4af-0778-426a-b4fd-cc0a6bf91bc6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\stores\\getInventory.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\stores\\getInventory.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "183edfe4-d328-4250-9329-5cbd017d9f41",
+          "title": "Returns pet inventories by status",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Returns a map of status codes to quantities",
+              "fullTitle": "Returns pet inventories by status Returns a map of status codes to quantities",
+              "timedOut": null,
+              "duration": 391,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200__getInventory').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "Error: unknown format \"int32\" ignored in schema at path \"#/additionalProperties\"",
+                "estack": "Error: unknown format \"int32\" ignored in schema at path \"#/additionalProperties\"\n    at unknownFormat (webpack://cypress-test-4/./node_modules/ajv/dist/vocabularies/format/format.js:63:0)\n    at validateFormat (webpack://cypress-test-4/./node_modules/ajv/dist/vocabularies/format/format.js:50:0)\n    at Object.code (webpack://cypress-test-4/./node_modules/ajv/dist/vocabularies/format/format.js:22:0)\n    at keywordCode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:464:0)\n    at eval (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:222:0)\n    at CodeGen.code (webpack://cypress-test-4/./node_modules/ajv/dist/compile/codegen/index.js:439:0)\n    at CodeGen.block (webpack://cypress-test-4/./node_modules/ajv/dist/compile/codegen/index.js:568:0)\n    at iterateKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:219:0)\n    at groupKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:200:0)\n    at eval (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:192:0)",
+                "diff": null
+              },
+              "uuid": "a9456de4-585a-434f-805e-fde46698db13",
+              "parentUUID": "183edfe4-d328-4250-9329-5cbd017d9f41",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a9456de4-585a-434f-805e-fde46698db13"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 391,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9e1b3725-e3a4-471a-86ea-ca7f0b16fa09",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\stores\\getOrderById.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\stores\\getOrderById.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "acc22a1b-842c-49c6-8234-1dd4afa24319",
+          "title": "Find purchase order by ID",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
+              "fullTitle": "Find purchase order by ID For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
+              "timedOut": null,
+              "duration": 312,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__getOrderById').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/store/order/%7BorderId%7D?orderId=4\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://petstore.swagger.io/v2/store/order/%7BorderId%7D?orderId=4\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"accept\": \"application/json\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:28 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 404,\n  \"type\": \"unknown\",\n  \"message\": \"java.lang.NumberFormatException: For input string: \\\"{orderId}\\\"\"\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/store/order/%7BorderId%7D?orderId=4\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://petstore.swagger.io/v2/store/order/%7BorderId%7D?orderId=4\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"accept\": \"application/json\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:28 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 404,\n  \"type\": \"unknown\",\n  \"message\": \"java.lang.NumberFormatException: For input string: \\\"{orderId}\\\"\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/stores/getOrderById.cy.js:24:19)",
+                "diff": null
+              },
+              "uuid": "80707f53-2246-4372-8bef-2b93125e6421",
+              "parentUUID": "acc22a1b-842c-49c6-8234-1dd4afa24319",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "80707f53-2246-4372-8bef-2b93125e6421"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 312,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2b9b0cd0-c3ca-4cb0-ba00-7e6c4264386e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\stores\\placeOrder.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\stores\\placeOrder.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "14e36cb7-c9c8-488e-84aa-7ce2e8f91068",
+          "title": "Place an order for a pet",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/store/order",
+              "fullTitle": "Place an order for a pet /store/order",
+              "timedOut": null,
+              "duration": 417,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json_application_json_placeOrder').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "Error: strict mode: unknown keyword: \"xml\"",
+                "estack": "Error: strict mode: unknown keyword: \"xml\"\n    at checkStrictMode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:174:0)\n    at checkUnknownRules (webpack://cypress-test-4/./node_modules/ajv/dist/compile/util.js:32:0)\n    at checkKeywords (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:120:0)\n    at validateFunctionCode (webpack://cypress-test-4/./node_modules/ajv/dist/compile/validate/index.js:19:0)\n    at Ajv.compileSchema (webpack://cypress-test-4/./node_modules/ajv/dist/compile/index.js:80:0)\n    at Ajv._compileSchemaEnv (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:472:0)\n    at Ajv.compile (webpack://cypress-test-4/./node_modules/ajv/dist/core.js:159:0)\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/stores/placeOrder.cy.js:27:45)",
+                "diff": null
+              },
+              "uuid": "d6406c33-b2d0-445b-b7a0-5ab762ce62ce",
+              "parentUUID": "14e36cb7-c9c8-488e-84aa-7ce2e8f91068",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d6406c33-b2d0-445b-b7a0-5ab762ce62ce"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 417,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c47ce6d0-0cd8-43b9-aa43-0460db6564a9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\createUser.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\createUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "94473690-dabc-4e40-b8f5-3aacea35cbd5",
+          "title": "Create user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "This can only be done by the logged in user.",
+              "fullTitle": "Create user This can only be done by the logged in user.",
+              "timedOut": null,
+              "duration": 411,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_applciation_json_application_json_createUser').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 166\n}\nBody: {\"id\":1,\"username\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":9542066149,\"userStatus\":0}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:37 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 166\n}\nBody: {\"id\":1,\"username\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":9542066149,\"userStatus\":0}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:37 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/createUser.cy.js:17:19)",
+                "diff": null
+              },
+              "uuid": "5e169be2-8f63-459f-a4d1-a5e29baa47e1",
+              "parentUUID": "94473690-dabc-4e40-b8f5-3aacea35cbd5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5e169be2-8f63-459f-a4d1-a5e29baa47e1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 411,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "74342768-d5fd-4085-af5f-747a026cd308",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\createUsersWithArrayInput.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\createUsersWithArrayInput.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b5339ea3-58a0-4ec8-b017-1d26cf20132f",
+          "title": "Creates list of users with given input array",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/user/createWithArray",
+              "fullTitle": "Creates list of users with given input array /user/createWithArray",
+              "timedOut": null,
+              "duration": 325,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_applciation_json_application_json_createUsersWithArrayInput').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/createWithArray\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user/createWithArray\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 168\n}\nBody: [{\"id\":1,\"usrename\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":9542066149,\"userStatus\":0}]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:41 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/createWithArray\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user/createWithArray\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 168\n}\nBody: [{\"id\":1,\"usrename\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":9542066149,\"userStatus\":0}]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:41 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/createUsersWithArrayInput.cy.js:20:15)",
+                "diff": null
+              },
+              "uuid": "3f92180c-83dd-40b7-8a55-6b5c95accdb0",
+              "parentUUID": "b5339ea3-58a0-4ec8-b017-1d26cf20132f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3f92180c-83dd-40b7-8a55-6b5c95accdb0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 325,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a6f8b496-69c6-4929-8d05-b1438f443e72",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\createUsersWithListInput.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\createUsersWithListInput.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6800a2e0-face-46fa-b5f3-7d6b033118fb",
+          "title": "Creates list of users with given input array",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/user/createWithList",
+              "fullTitle": "Creates list of users with given input array /user/createWithList",
+              "timedOut": null,
+              "duration": 408,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_applciation_json_application_json_createUsersWithListInput').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/createWithList\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user/createWithList\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 154\n}\nBody: [{\"id\":1,\"usrename\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":89277499209}]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:45 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/createWithList\n\nThe response we received from your web server was:\n\n  > 406: Not Acceptable\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://petstore.swagger.io/v2/user/createWithList\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Content-Type\": \"application/json\",\n  \"accept\": \"applciation/json\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 154\n}\nBody: [{\"id\":1,\"usrename\":\"shivasai123\",\"firstName\":\"shivasai\",\"lastName\":\"mandepally\",\"email\":\"shivasai@gmail.com\",\"password\":\"shiva1213\",\"phone\":89277499209}]\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 406 - Not Acceptable\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:45 GMT\",\n  \"content-type\": \"applciation/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 406,\n  \"type\": \"unknown\",\n  \"message\": null\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/createUsersWithListInput.cy.js:20:15)",
+                "diff": null
+              },
+              "uuid": "07e3325d-cd93-4b89-b6f3-490bcf2e439d",
+              "parentUUID": "6800a2e0-face-46fa-b5f3-7d6b033118fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "07e3325d-cd93-4b89-b6f3-490bcf2e439d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 408,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "171d378e-c0b1-4443-9dd9-4eb349f660ed",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\deleteUser.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\deleteUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c0b32dd0-57f1-4f08-9279-25ba98bc7b7c",
+          "title": "Delete user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "This can only be done by the logged in user.",
+              "fullTitle": "Delete user This can only be done by the logged in user.",
+              "timedOut": null,
+              "duration": 297,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('400___deleteUser').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/shivasai123\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://petstore.swagger.io/v2/user/shivasai123\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:49 GMT\",\n  \"content-length\": \"0\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: \n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/shivasai123\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://petstore.swagger.io/v2/user/shivasai123\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:49 GMT\",\n  \"content-length\": \"0\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: \n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/deleteUser.cy.js:31:15)",
+                "diff": null
+              },
+              "uuid": "2207e4ce-0973-4922-aac3-744d35865686",
+              "parentUUID": "c0b32dd0-57f1-4f08-9279-25ba98bc7b7c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "This can only be done by the logged in user.",
+              "fullTitle": "Delete user This can only be done by the logged in user.",
+              "timedOut": null,
+              "duration": 309,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('404___deleteUser').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/shivasai123\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://petstore.swagger.io/v2/user/shivasai123\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:49 GMT\",\n  \"content-length\": \"0\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: \n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/shivasai123\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://petstore.swagger.io/v2/user/shivasai123\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:49 GMT\",\n  \"content-length\": \"0\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: \n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/deleteUser.cy.js:69:15)",
+                "diff": null
+              },
+              "uuid": "d76b22f1-a386-4629-baf1-3cdec0ef0ef1",
+              "parentUUID": "c0b32dd0-57f1-4f08-9279-25ba98bc7b7c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2207e4ce-0973-4922-aac3-744d35865686",
+            "d76b22f1-a386-4629-baf1-3cdec0ef0ef1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 606,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "64430bf8-a354-41ab-94e1-8337bb6d3182",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\getUserByName.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\getUserByName.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6861dbda-75d4-40df-9641-e5521fac9a7a",
+          "title": "Get user by user name",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/user/{username}",
+              "fullTitle": "Get user by user name /user/{username}",
+              "timedOut": null,
+              "duration": 356,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__getUserByName').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/shivasai123\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://petstore.swagger.io/v2/user/shivasai123\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"accept\": \"application/json\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:53 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 1,\n  \"type\": \"error\",\n  \"message\": \"User not found\"\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://petstore.swagger.io/v2/user/shivasai123\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://petstore.swagger.io/v2/user/shivasai123\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"accept\": \"application/json\",\n  \"header\": \"\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.6.1 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\nBody: \n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"date\": \"Tue, 26 Dec 2023 15:09:53 GMT\",\n  \"content-type\": \"application/json\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"access-control-allow-origin\": \"*\",\n  \"access-control-allow-methods\": \"GET, POST, DELETE, PUT\",\n  \"access-control-allow-headers\": \"Content-Type, api_key, Authorization\",\n  \"server\": \"Jetty(9.2.9.v20150224)\"\n}\nBody: {\n  \"code\": 1,\n  \"type\": \"error\",\n  \"message\": \"User not found\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:53272/__cypress/runner/cypress_runner.js:133450:72)\n    at tryCatcher (http://localhost:53272/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53272/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53272/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53272/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53272/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:53272/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53272/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53272/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/getUserByName.cy.js:32:19)",
+                "diff": null
+              },
+              "uuid": "b90ca6c3-c270-4030-8575-6adabfc1afa6",
+              "parentUUID": "6861dbda-75d4-40df-9641-e5521fac9a7a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b90ca6c3-c270-4030-8575-6adabfc1afa6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 356,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f1abc218-2b2b-413f-95b4-32844b0663ba",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\loginUser.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\loginUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7dc133a8-6f90-43ea-b80b-2c4e2e730295",
+          "title": "Logs user into the system",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/user/login",
+              "fullTitle": "Logs user into the system /user/login",
+              "timedOut": null,
+              "duration": 411,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json__loginUser').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {
+                "message": "AssertionError: expected false to be true",
+                "estack": "AssertionError: expected false to be true\n    at Context.eval (webpack://cypress-test-4/./cypress/e2e/API_TESTING/users/loginUser.cy.js:36:46)",
+                "diff": null
+              },
+              "uuid": "c358b421-106e-4b2c-865e-a3840eb3a6e2",
+              "parentUUID": "7dc133a8-6f90-43ea-b80b-2c4e2e730295",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c358b421-106e-4b2c-865e-a3840eb3a6e2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 411,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f8e36b89-0c1a-418d-a7bd-8234c343e27d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\logoutUser.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\logoutUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5c2efbda-2a80-457c-b26d-26c1ffd56a9d",
+          "title": "Logs out current logged in user session",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/user/logout",
+              "fullTitle": "Logs out current logged in user session /user/logout",
+              "timedOut": null,
+              "duration": 378,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200__logoutUser').then(fixtureResponse => {\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {},
+              "uuid": "138409d1-3db0-49b1-bfda-45fa8efea2c0",
+              "parentUUID": "5c2efbda-2a80-457c-b26d-26c1ffd56a9d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "138409d1-3db0-49b1-bfda-45fa8efea2c0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 378,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "674d0fbf-6f6b-4639-a5bc-d730584285c5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\users\\updateUser.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\users\\updateUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11e5bb1e-73de-4852-a121-b00d50e29404",
+          "title": "Updated user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "This can only be done by the logged in user.",
+              "fullTitle": "Updated user This can only be done by the logged in user.",
+              "timedOut": null,
+              "duration": 342,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('200_application_json_application_json_updateUser').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  let pathParams = fixtureResponse.pathParam ? fixtureResponse.pathParam : '';\n  for (const key in pathParams) {\n    if (pathParams.hasOwnProperty(key)) {\n      const placeholder = '{' + key + '}';\n      requestInfo.url = requestInfo.url.replace(new RegExp(placeholder, 'g'), pathParams[key]);\n    }\n  }\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {},
+              "uuid": "db9cf988-4f9e-43d3-a46c-845c50ff57cb",
+              "parentUUID": "11e5bb1e-73de-4852-a121-b00d50e29404",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "db9cf988-4f9e-43d3-a46c-845c50ff57cb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 342,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "00db7e34-2ae3-4e10-a1a4-240d07e1f55a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_TESTING\\pets\\findPetsByTags.cy.js",
+      "file": "cypress\\e2e\\API_TESTING\\pets\\findPetsByTags.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "506bc211-bff4-4017-9333-0bfc5e84e3e1",
+          "title": "Finds Pets by tags",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+              "fullTitle": "Finds Pets by tags Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.fixture('200_application_json__findPetsByTags').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {},
+              "uuid": "a477d963-622c-4710-994e-f488786c470d",
+              "parentUUID": "506bc211-bff4-4017-9333-0bfc5e84e3e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+              "fullTitle": "Finds Pets by tags Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.fixture('200_application_xml__findPetsByTags').then(fixtureResponse => {\n  requestInfo.body = fixtureResponse.payload ? fixtureResponse.payload : '';\n  requestInfo.headers = fixtureResponse.headers ? fixtureResponse.headers : '';\n  requestInfo.qs = fixtureResponse.queryParam ? fixtureResponse.queryParam : '';\n  cy.request(requestInfo).then(response => {\n    expect(response.status).to.eq(parseInt(fixtureResponse.responseStatusCode));\n    if (fixtureResponse.responseSchema && fixtureResponse.responseSchema != '') {\n      const validate = ajv.compile(fixtureResponse.responseSchema);\n      const isValid = validate(response.body);\n      expect(isValid).to.be.true;\n    }\n  });\n});",
+              "err": {},
+              "uuid": "dce2a5ee-a7bf-4f77-9000-5644fbb9db31",
+              "parentUUID": "506bc211-bff4-4017-9333-0bfc5e84e3e1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "a477d963-622c-4710-994e-f488786c470d",
+            "dce2a5ee-a7bf-4f77-9000-5644fbb9db31"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
