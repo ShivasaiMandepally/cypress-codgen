@@ -1,0 +1,8 @@
+swagger.json
+README.md
+package.json
+package-lock.json
+report-config.json
+cypress.config.js
+cypress/support/commands.js
+cypress/support/e2e.js
