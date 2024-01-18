@@ -1,0 +1,10 @@
+swagger.json
+README.md
+package.json
+package-lock.json
+report-config.json
+cypress.config.js
+commands.js
+e2e.js
+.prettierrc.json
+.prettierignore
