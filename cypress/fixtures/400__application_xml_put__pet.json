@@ -1,0 +1,8 @@
+{
+    "headers": {
+        "Content-Type": "application/xml"
+    },
+    "payload": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><adipisicing_6f7>71826126</adipisicing_6f7>",
+    "responseStatusCode": "400",
+    "responseSchema": ""
+}

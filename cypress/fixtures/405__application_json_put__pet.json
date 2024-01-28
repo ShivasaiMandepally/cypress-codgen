@@ -1,0 +1,12 @@
+{
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "payload": {
+        "code": 88902023,
+        "type": "laborum elit dolor cupidatat dolor",
+        "message": "nulla minim"
+    },
+    "responseStatusCode": "405",
+    "responseSchema": ""
+}

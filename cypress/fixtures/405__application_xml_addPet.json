@@ -1,0 +1,8 @@
+{
+    "headers": {
+        "Content-Type": "application/xml"
+    },
+    "payload": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><root><consectetur_708>false</consectetur_708><code>66243045</code><type>cillum ut occaecat esse</type><message>in</message></root>",
+    "responseStatusCode": "405",
+    "responseSchema": ""
+}

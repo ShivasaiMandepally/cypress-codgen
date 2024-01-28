@@ -1,0 +1,27 @@
+{
+    "headers": {
+        "Content-Type": "application/json",
+        "accept": "application/xml"
+    },
+    "payload": {
+        "code": 88902023,
+        "type": "laborum elit dolor cupidatat dolor",
+        "message": "nulla minim"
+    },
+    "responseStatusCode": "200",
+    "responseSchema": {
+        "type": "object",
+        "properties": {
+            "code": {
+                "type": "integer",
+                "format": "int32"
+            },
+            "type": {
+                "type": "string"
+            },
+            "message": {
+                "type": "string"
+            }
+        }
+    }
+}

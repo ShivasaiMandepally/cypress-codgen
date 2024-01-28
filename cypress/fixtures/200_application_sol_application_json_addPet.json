@@ -1,0 +1,28 @@
+{
+    "headers": {
+        "Content-Type": "application/json",
+        "accept": "application/sol"
+    },
+    "payload": {
+        "exercitation61": 7835442.9338104725,
+        "code": -5107458,
+        "type": "laborum",
+        "message": "ut qui"
+    },
+    "responseStatusCode": "200",
+    "responseSchema": {
+        "type": "object",
+        "properties": {
+            "code": {
+                "type": "integer",
+                "format": "int32"
+            },
+            "type": {
+                "type": "string"
+            },
+            "message": {
+                "type": "string"
+            }
+        }
+    }
+}

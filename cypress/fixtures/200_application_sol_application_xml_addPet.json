@@ -1,0 +1,23 @@
+{
+    "headers": {
+        "Content-Type": "application/xml",
+        "accept": "application/sol"
+    },
+    "payload": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><root><consectetur_708>false</consectetur_708><code>66243045</code><type>cillum ut occaecat esse</type><message>in</message></root>",
+    "responseStatusCode": "200",
+    "responseSchema": {
+        "type": "object",
+        "properties": {
+            "code": {
+                "type": "integer",
+                "format": "int32"
+            },
+            "type": {
+                "type": "string"
+            },
+            "message": {
+                "type": "string"
+            }
+        }
+    }
+}
